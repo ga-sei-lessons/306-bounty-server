@@ -13,7 +13,10 @@ lastSeen: String
 // define a mongoose schema
 const BountySchema = new mongoose.Schema({
     name: {
-        type: String
+        type: String,
+        // required: true
+        // minlength: 2,
+        // maxlength: 300
     },
     wantedFor: {
         type: String
@@ -25,10 +28,12 @@ const BountySchema = new mongoose.Schema({
         type: String
     },
     reward: {
-        type: Number
+        type: Number,
+        // default: 10000
     },
     captured: {
-        type: Boolean
+        type: Boolean,
+        // default: false
     },
     lastSeen: {
         type: String

@@ -18,7 +18,11 @@ const bountyTest = async () => {
         const foundBounty = await db.Bounty.findOne({ name: 'Han Solo' })
         console.log(foundBounty)
         // UPDATE
-        const updatedBounty = await db.Bounty.findOneAndUpdate({ name: 'Han Solo' }, { reward: 150000 }, { new: true })
+        const updatedBounty = await db.Bounty.findOneAndUpdate(
+            { name: 'Han Solo' },
+            { reward: 150000 }, 
+            { new: true }
+        )
         console.log(updatedBounty)
         // DESTROY
         const deletedBounty = await db.Bounty.findOneAndDelete({ name: 'Han Solo' })
